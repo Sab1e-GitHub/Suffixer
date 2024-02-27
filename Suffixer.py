@@ -12,17 +12,17 @@ def editFileSuffix():
     for path, dir_lst, file_lst in paths:
         for file_name in file_lst:
             filename=os.path.join(path, file_name)
-            print("找到文件:"+filename)
+            print("@Suffixer:找到文件:"+filename)
             countTotal+=1
             if filename.endswith(suffix):
                 countSuccess+=1
-                print("正在修改，原文件名:"+filename)
+                print("@Suffixer:正在修改，原文件名:"+filename)
                 newFilename = filename.split(".bc!")[0]
-                print("新文件名:"+newFilename)
+                print("@Suffixer:新文件名:"+newFilename)
                 os.rename(filename, newFilename)
             else:
                 countFail+=1
-                print("不是"+suffix+"后缀的文件")
+                print("@Suffixer:不是"+suffix+"后缀的文件")
     result()
 
 def deleteSuffixFile():
@@ -32,15 +32,15 @@ def deleteSuffixFile():
     for path, dir_lst, file_lst in paths:
         for file_name in file_lst:
             filename=os.path.join(path, file_name)
-            print("找到文件:"+filename)
+            print("@Suffixer:找到文件:"+filename)
             countTotal+=1
             if filename.endswith(suffix):
                 countSuccess+=1
-                print("正在修改，原文件名:"+filename)
+                print("@Suffixer:正在删除:"+filename)
                 os.remove(filename)
             else:
                 countFail+=1
-                print("不是"+suffix+"后缀的文件")
+                print("@Suffixer:不是"+suffix+"后缀的文件")
     result()
 #start
 
@@ -55,7 +55,7 @@ def result():
     print("\n============RESULT============\n")
 
 print("\n============SUFFIXER============\n")
-print("欢迎使用Suffixer")
+print("欢迎使用Suffixer\n作者:Sab1e")
 print("\n============SUFFIXER============\n")
 suffix = input("请输入文件后缀:")
 
