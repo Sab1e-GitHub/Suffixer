@@ -37,9 +37,13 @@ def deleteSuffixFile():
             print("找到文件:"+filename)
             countTotal+=1
             if filename.endswith(suffix):
-                countSuccess+=1
-                print("正在删除:"+filename)
-                os.remove(filename)
+                try:
+                    print("正在删除:"+filename)
+                    os.remove(filename)
+                    countSuccess+=1
+                except Exception as e:
+                    print(f"删除文件失败: {filename}, 错误: {e}")
+                    countFail+=1
             else:
                 countFail+=1
                 print("不是"+suffix+"后缀的文件")
