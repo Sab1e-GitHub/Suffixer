@@ -6,7 +6,8 @@
 
 使用方法：
 ```
-  python Suffixer.py
+  chmod +x ./Suffixer.py
+  ./Suffixer.py
 ```
 
 功能：
